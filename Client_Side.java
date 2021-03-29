@@ -27,7 +27,7 @@ public class Client_Side{
 
             //Make a string using the recieved byte and print the line
             myString = new String(byteArray, StandardCharsets.UTF_8);
-            System.out.println(myString + "recieved from server");
+            System.out.println(myString + " recieved from server");
             
             //STEP 3 (Protocol)
             //Authenticate with the username (jono) -- not sure if this is will stay as jono --
@@ -41,12 +41,12 @@ public class Client_Side{
 
             //Make a string using the recieved byte and print the line 
             myString = new String(byteArray0, StandardCharsets.UTF_8);
-            System.out.println("Second OK from ther sever: " + myString);
+            System.out.println("Second OK from the server: " + myString);
 
             //STEP 5 (Protocol)
             //Make a string, convert it to a byte array and send to the server
             myString = "REDY";
-            dout.write(myString.getBytes());
+            byteArray = myString.getBytes();
             dout.write(byteArray);
             dout.flush();
 
@@ -56,13 +56,13 @@ public class Client_Side{
 
             //Make a string using the recieved byte and print the line 
             myString = new String(byteArray1, StandardCharsets.UTF_8);
-            System.out.println("String:" + myString);
+            System.out.println("String:" + myString);                                               //all good
 
             //STEP 7 (protocol)
             //Believe have to implement a GETS command to get the data from the server
             //Tell the server to get all
             myString ="GETS ALL";
-            dout.write(myString.getBytes());
+            byteArray = myString.getBytes();
             dout.write(byteArray);
             dout.flush();
 

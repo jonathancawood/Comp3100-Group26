@@ -73,6 +73,24 @@ public class Client_Side{
             //make a string using the recieved byte and print the line
             myString = new String(byteArray2, StandardCharsets.UTF_8);
             System.out.println("GETS all reply:" + myString);
+
+            //STEP 9 (Protocol)
+            //Sends ok back to the server
+            myString = "OK";
+            dout.write(myString.getBytes());
+            dout.flush();
+
+            byte[] byteArray3 = new byte[184*124];
+            dis.read(byteArray3);
+
+            //STEPS 11 and 12 (protocol)
+            //make a string using the recieved byte and print the line
+            myString = new String(byteArray3, StandardCharsets.UTF_8);
+            System.out.println("Second GETS all reply:" + myString);
+
+            myString = "QUIT";
+            dout.write(myString.getBytes());
+            dout.flush();
         } catch(Exception e) {System.out.println(e);}
     }
 }

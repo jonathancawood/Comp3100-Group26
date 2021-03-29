@@ -57,6 +57,22 @@ public class Client_Side{
             //Make a string using the recieved byte and print the line 
             myString = new String(byteArray1, StandardCharsets.UTF_8);
             System.out.println("String:" + myString);
+
+            //STEP 7 (protocol)
+            //Believe have to implement a GETS command to get the data from the server
+            //Tell the server to get all
+            myString ="GETS ALL";
+            dout.write(myString.getBytes());
+            dout.write(byteArray);
+            dout.flush();
+
+            //Read the byte stream from the server
+            byte[] byteArray2 = new byte[12+2];
+            dis.read(byteArray2);
+
+            //make a string using the recieved byte and print the line
+            myString = new String(byteArray2, StandardCharsets.UTF_8);
+            System.out.println("GETS all reply:" + myString);
         } catch(Exception e) {System.out.println(e);}
     }
 }

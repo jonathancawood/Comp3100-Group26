@@ -129,7 +129,7 @@ public class Client_Schedule_job {
                 String[] individualServer = server.split(" ");
                 Servers ServerIndividual = new Servers();
                 serverIndividual.serverName= individualServer[0];
-                serverIndividual.serverID = Integer.parseInt(indivdualSever[1]);
+                serverIndividual.serverID = Integer.parseInt(individualSever[1]);
                 serverIndividual.state = individualServer[2];
                 serverIndividual.currStartTime = Integer.praseInt(individualServer[3]);
                 serverIndividual.cores = Integer.parseInt(individualServer[4]);
